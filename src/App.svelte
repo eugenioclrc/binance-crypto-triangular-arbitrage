@@ -152,7 +152,7 @@ onMount( async () => {
 </script>
 
 <main>
-	<h1>Binance triangle pairs arbitrage in real time</h1>
+	<h1>Binance triangular arbitrage in real time</h1>
 	<h1><small>find market imperfections easily!<small></h1>
 
 	<p>
