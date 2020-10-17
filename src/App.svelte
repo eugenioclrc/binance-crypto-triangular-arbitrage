@@ -153,13 +153,15 @@ onMount( async () => {
 
 <main>
 	<h1>Binance triangular arbitrage in real time</h1>
-	<h1><small>find market imperfections easily!<small></h1>
+	<h1><small>find market imperfections easily!<small> <a class="github-button" href="https://github.com/eugenioclrc/binance-crypto-triangular-arbitrage" data-icon="octicon-star" aria-label="Star eugenioclrc/binance-crypto-triangular-arbitrage on GitHub">Star</a></h1>
 
 	<p>
 		Triangular arbitrage is the act of exploiting an arbitrage opportunity resulting from a pricing discrepancy among three different currencies. A triangular arbitrage strategy involves three trades, exchanging the initial currency for a second, the second currency for a third, and the third currency for the initial. During the second trade, the arbitrageur locks in a zero-risk profit from the discrepancy that exists when the market cross exchange rate is not aligned with the implicit cross exchange rate. A profitable trade is only possible if there exist market imperfections. Profitable triangular arbitrage is very rarely possible because when such opportunities arise, traders execute trades that take advantage of the imperfections and prices adjust up or down until the opportunity disappears.[6]
 
 	<p><b>Want to help me?</b> please register your binance account using my referral link visit
 	<a href="https://www.binance.com/en/register?ref=Q952PPIF">https://www.binance.com/en/register</a></p>
+
+
 	Total combinations: {info.pairslen} pairs<br >
 	Socket updates per second: {info.msgcount}<br />
 	Cycles checked per second: {info.cyclescheckedPerSecond}<br />
@@ -194,6 +196,7 @@ onMount( async () => {
 	<blockquote>
 		Trades profit are calculate on a base budget of 100USD and a 0.0075% fee
 	</blockquote>
+	<a class="github-button" href="https://github.com/eugenioclrc/binance-crypto-triangular-arbitrage" data-icon="octicon-star" aria-label="Star eugenioclrc/binance-crypto-triangular-arbitrage on GitHub">Star</a>
 	<h2>WINNERS</h2>
 	{#if ! winners.length}
 		<b>No winner pair yet</b>
