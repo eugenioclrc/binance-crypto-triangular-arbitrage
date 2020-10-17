@@ -1,0 +1,29 @@
+{
+  "name": "svelte-app",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "rollup -c",
+    "dev": "rollup -c -w",
+    "start": "sirv public"
+  },
+  "devDependencies": {
+    "@futagoza/eslint-config-svelte": "^15.1.0",
+    "@rollup/plugin-commonjs": "^15.1.0",
+    "@rollup/plugin-node-resolve": "^9.0.0",
+    "eslint": "^7.11.0",
+    "eslint-config-airbnb-base": "^14.2.0",
+    "eslint-plugin-import": "^2.22.1",
+    "rollup": "^2.32.0",
+    "rollup-plugin-livereload": "^2.0.0",
+    "rollup-plugin-svelte": "^6.0.1",
+    "rollup-plugin-terser": "^7.0.2",
+    "svelte": "^3.29.0"
+  },
+  "dependencies": {
+    "ccxt": "^1.36.63",
+    "dayjs": "^1.9.3",
+    "decimal.js": "^10.2.1",
+    "sirv-cli": "^1.0.7",
+    "ws": "^7.3.1"
+  }
+}
