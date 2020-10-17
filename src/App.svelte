@@ -172,6 +172,15 @@ onMount( async () => {
 	</big>
 
 
+	<a class="github-button" href="https://github.com/eugenioclrc/binance-crypto-triangular-arbitrage" data-icon="octicon-star" aria-label="Star eugenioclrc/binance-crypto-triangular-arbitrage on GitHub">Star</a>
+	<h2>WINNERS</h2>
+	{#if ! winners.length}
+		<b>No winner pair yet</b>
+	{:else}
+		<ResultsTable results={winners} />
+	{/if}
+
+
 	{#if tops.length}
 	<h2>Pairs</h2>
 	<table style="max-width: 320px; margin: 30px auto;" class="styled-table">
@@ -196,14 +205,6 @@ onMount( async () => {
 	<blockquote>
 		Trades profit are calculate on a base budget of 100USD and a 0.0075% fee
 	</blockquote>
-	<a class="github-button" href="https://github.com/eugenioclrc/binance-crypto-triangular-arbitrage" data-icon="octicon-star" aria-label="Star eugenioclrc/binance-crypto-triangular-arbitrage on GitHub">Star</a>
-	<h2>WINNERS</h2>
-	{#if ! winners.length}
-		<b>No winner pair yet</b>
-	{:else}
-		<ResultsTable results={winners} />
-	{/if}
-
 
 	{#if oldWinners && oldWinners.length}
 		<h2>PREV CYCLE WINNERS</h2>
