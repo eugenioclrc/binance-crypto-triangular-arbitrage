@@ -1,5 +1,6 @@
 <script>
 export let results = [];
+
 </script>
 {#each results as w, i}
   <p>
@@ -51,7 +52,8 @@ export let results = [];
       <br />
     {/each}
     <br />
-    Total profit {w.profit.sub( 1 ).mul( 100 ).toFixed( 4 )}%
+    Total profit (counting all binance BNB fees) {w.profit.sub( 1 ).mul( 100 ).toFixed( 4 )}%
+    <br />
   </p>
   <hr/>
   </div>

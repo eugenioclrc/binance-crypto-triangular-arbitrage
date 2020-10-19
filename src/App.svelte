@@ -183,19 +183,19 @@ onMount( async () => {
 
 	{#if tops.length}
 	<h2>Pairs</h2>
-	<table style="max-width: 320px; margin: 30px auto;" class="styled-table">
+	<table class="styled-table pairs-table">
 		<thead>
 			<th>Pairs cycle</th>
-			<th>Profit</th>
+			<th>Profit (BNB Fess included)</th>
 		</thead>
 		<tbody>
 			{#each tops as t}
 			<tr>
-				<td style="padding: 5px 15px">
+				<td style="min-width: 235px;">
 					{@html t.chain.join( " &rarr; " )}
 				</td>
-				<td style="padding: 5px 15px">
-					<pre style="cursor:pointer" on:click={() => showPopupLong( t )}>{t.profit.toFixed( 4 )}% &#9432;</pre>
+				<td>
+					<pre style="cursor:pointer" on:click={() => showPopupLong( t )}>{t.profit.sub(1).mul(100).toFixed( 4 )}% &#9432;</pre>
 				</td>
 				</tr>
 			{/each}
@@ -242,6 +242,11 @@ onMount( async () => {
 		}
 	}
 
-
+  .pairs-table {
+    max-width: 320px; margin: 30px auto;
+  }
+  .pairs-table td {
+    padding: 5px 15px;
+  }
 
 </style>
