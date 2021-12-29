@@ -26,7 +26,7 @@
 <br />
 <div align="center">
   <a href="https://eugenioclrc.github.io/binance-crypto-triangular-arbitrage/">
-    <img src="demo.png" alt="Logo" width="80" height="80">
+    <img src="demo.png" alt="Logo" width="500">
   </a>
   <h3 align="center">Crypto triangular arbitrage</h3>
 
