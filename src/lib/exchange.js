@@ -1,8 +1,9 @@
 import { getWithExpiry, setWithExpiry } from './localstorage-cache';
 
-const binanceApi = new window.ccxt.binance();
+let binanceApi;
 
 export async function getMarketsData() {
+  binanceApi = binanceApi || new window.ccxt.binance();
   let marketsData = getWithExpiry('marketsData');
   if (!marketsData) {
     marketsData = await binanceApi.loadMarkets();
@@ -13,6 +14,7 @@ export async function getMarketsData() {
 }
 
 export async function getTickersData() {
+  binanceApi = binanceApi || new window.ccxt.binance();
   let tickersData = getWithExpiry('tickersData');
   if (!tickersData) {
     tickersData = await binanceApi.fetchTickers();

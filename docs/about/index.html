@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="description" content="Svelte demo app" />
+		<link rel="icon" href="/favicon.png" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/ccxt@1.36.63/dist/ccxt.browser.js"></script>
+		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-50441906-3"></script>
+		<script async defer src="https://buttons.github.io/buttons.js"></script>
+		<title>About</title>
+
+		
+
+		<link rel="modulepreload" href="/binance-crypto-triangular-arbitrage/_app/start-e8c2442e.js">
+		<link rel="modulepreload" href="/binance-crypto-triangular-arbitrage/_app/chunks/vendor-fb2f15d8.js">
+		<link rel="modulepreload" href="/binance-crypto-triangular-arbitrage/_app/pages/__layout.svelte-10b692c1.js">
+		<link rel="modulepreload" href="/binance-crypto-triangular-arbitrage/_app/pages/about.svelte-58b8a741.js">
+		<link rel="stylesheet" href="/binance-crypto-triangular-arbitrage/_app/assets/start-d5b4de3e.css">
+		<link rel="stylesheet" href="/binance-crypto-triangular-arbitrage/_app/assets/pages/__layout.svelte-f5d1749c.css">
+		<link rel="stylesheet" href="/binance-crypto-triangular-arbitrage/_app/assets/pages/about.svelte-bf4528fa.css">
+
+		<script type="module">
+			import { start } from "/binance-crypto-triangular-arbitrage/_app/start-e8c2442e.js";
+			start({
+				target: document.querySelector("#svelte"),
+				paths: {"base":"/binance-crypto-triangular-arbitrage","assets":""},
+				session: {},
+				host: location.host,
+				route: true,
+				spa: false,
+				trailing_slash: "never",
+				hydrate: {
+					status: 200,
+					error: null,
+					nodes: [
+						import("/binance-crypto-triangular-arbitrage/_app/pages/__layout.svelte-10b692c1.js"),
+						import("/binance-crypto-triangular-arbitrage/_app/pages/about.svelte-58b8a741.js")
+					],
+					page: {
+						host: location.host, // TODO this is redundant
+						path: "\u002Fabout",
+						query: new URLSearchParams(""),
+						params: {}
+					}
+				}
+			});
+		</script>
+		<script>
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments);}
+			gtag('js', new Date());
+
+			gtag('config', 'UA-50441906-3');
+		</script>
+	</head>
+	<body>
+		<div id="svelte">
+
+
+
+
+<div class="content svelte-cf77e8"><h1>About this app</h1>
+
+
+	
+	<pre>npm init svelte@next</pre>
+
+</div>
+
+</div>
+	</body>
+</html>

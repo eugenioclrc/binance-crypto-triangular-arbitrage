@@ -7,7 +7,11 @@ export function setWithExpiry(key, value, ttl) {
     value,
     expiry: now.getTime() + ttl,
   };
-  localStorage.setItem(key, JSON.stringify(item));
+  try {
+    localStorage.setItem(key, JSON.stringify(item));
+  } catch(err) {
+    // cache size erroro
+  }
 }
 
 export function getWithExpiry(key) {
