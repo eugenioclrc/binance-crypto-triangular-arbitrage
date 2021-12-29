@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="description" content="Svelte demo app" />
+		<link rel="icon" href="/favicon.png" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/ccxt@1.36.63/dist/ccxt.browser.js"></script>
+		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-50441906-3"></script>
+		<script async defer src="https://buttons.github.io/buttons.js"></script>
+		%svelte.head%
+		<script>
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments);}
+			gtag('js', new Date());
+
+			gtag('config', 'UA-50441906-3');
+		</script>
+	</head>
+	<body>
+		<div id="svelte">%svelte.body%</div>
+	</body>
+</html>

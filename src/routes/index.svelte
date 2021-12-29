@@ -1,14 +1,16 @@
+<script context="module">
+	export const prerender = true;
+</script>
 <script>
 import { onMount } from "svelte";
 import dayjs from "dayjs";
-import Decimal from "decimal.js";
-import buildPairs from "./lib/pairs";
-import buildProfitFunc from "./lib/profit";
+import buildPairs from "$lib/pairs";
+import buildProfitFunc from "$lib/profit";
 
-import socketSubscribe from "./lib/socket";
+import socketSubscribe from "$lib/socket";
 
-import ResultsTable from "./winners-table.svelte";
-import DetailModal from "./detail.svelte";
+import ResultsTable from "$lib/winners-table.svelte";
+import DetailModal from "$lib/detail.svelte";
 
 let modalDetail = false;
 let contentModal = {};
@@ -33,8 +35,10 @@ let tops = [];
 
 let checkProfit;
 
-onMount( async () => {
+// const INTERVAL = 5000;
+const INTERVAL = 50;
 
+onMount( async () => {
   const socket = await socketSubscribe();
   const { hashMarket, pairs: allPairs } = await buildPairs();
 
@@ -142,7 +146,7 @@ onMount( async () => {
     tops = ret
       .slice( 0, 10 );
 
-    setTimeout( tick, 50 )
+    setTimeout( tick, INTERVAL )
 
   }
   setTimeout( tick, 1000 );
@@ -190,12 +194,12 @@ onMount( async () => {
 		</thead>
 		<tbody>
 			{#each tops as t}
-			<tr>
-				<td style="min-width: 235px;">
+			<tr class="cursor-pointer" on:click={() => showPopupLong( t )}>
+				<td style="min-width: 295px;">
 					{@html t.chain.join( " &rarr; " )}
 				</td>
 				<td>
-					<pre style="cursor:pointer" on:click={() => showPopupLong( t )}>{t.profit.sub(1).mul(100).toFixed( 4 )}% &#9432;</pre>
+					<pre>{t.profit.sub(1).mul(100).toFixed( 4 )}% &#9432;</pre>
 				</td>
 				</tr>
 			{/each}
@@ -210,7 +214,6 @@ onMount( async () => {
 		<h2>PREV CYCLE WINNERS</h2>
 		<ResultsTable results={oldWinners} />
 	{/if}
-
 </main>
 {#if modalDetail}
 	<DetailModal on:close={() => modalDetail = false}>
@@ -231,6 +234,7 @@ onMount( async () => {
 
 	h1 {
 		color: #ff3e00;
+		/* @apply text-orange-600; */
 		text-transform: uppercase;
 		font-size: 2em;
 		font-weight: 400;
@@ -241,12 +245,5 @@ onMount( async () => {
 			max-width: none;
 		}
 	}
-
-  .pairs-table {
-    max-width: 320px; margin: 30px auto;
-  }
-  .pairs-table td {
-    padding: 5px 15px;
-  }
 
 </style>

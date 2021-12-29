@@ -1,5 +1,4 @@
 <script>
-export let contentModal = {};
 
 import { createEventDispatcher } from 'svelte';
 

@@ -1,31 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta charset='utf-8'>
-	<meta name='viewport' content='width=device-width,initial-scale=1'>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="description" content="Svelte demo app" />
+		<link rel="icon" href="/favicon.png" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/ccxt@1.36.63/dist/ccxt.browser.js"></script>
+		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-50441906-3"></script>
+		<script async defer src="https://buttons.github.io/buttons.js"></script>
+		
 
-	<title>Binance triangular arbitrage in real time</title>
+		
 
-	<link rel='icon' type='image/png' href='./favicon.png'>
-	<link rel='stylesheet' href='./global.css'>
-	<link rel='stylesheet' href='./build/bundle.css'>
-	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/ccxt@1.36.63/dist/ccxt.browser.js"></script>
-	<script defer src='./build/bundle.js'></script>
-	<!-- Place this tag in your head or just before your close body tag. -->
-	<script async defer src="https://buttons.github.io/buttons.js"></script>
-	<!-- Global site tag (gtag.js) - Google Analytics -->
-	<meta property="og:image" content="demo.png">
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-50441906-3"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+		<link rel="modulepreload" href="/binance-crypto-triangular-arbitrage/_app/start-e8c2442e.js">
+		<link rel="modulepreload" href="/binance-crypto-triangular-arbitrage/_app/chunks/vendor-fb2f15d8.js">
+		<link rel="modulepreload" href="/binance-crypto-triangular-arbitrage/_app/pages/__layout.svelte-10b692c1.js">
+		<link rel="modulepreload" href="/binance-crypto-triangular-arbitrage/_app/pages/index.svelte-43b4d0c6.js">
+		<link rel="stylesheet" href="/binance-crypto-triangular-arbitrage/_app/assets/start-d5b4de3e.css">
+		<link rel="stylesheet" href="/binance-crypto-triangular-arbitrage/_app/assets/pages/__layout.svelte-f5d1749c.css">
+		<link rel="stylesheet" href="/binance-crypto-triangular-arbitrage/_app/assets/pages/index.svelte-3c70740e.css">
 
-  gtag('config', 'UA-50441906-3');
-</script>
+		<script type="module">
+			import { start } from "/binance-crypto-triangular-arbitrage/_app/start-e8c2442e.js";
+			start({
+				target: document.querySelector("#svelte"),
+				paths: {"base":"/binance-crypto-triangular-arbitrage","assets":""},
+				session: {},
+				host: location.host,
+				route: true,
+				spa: false,
+				trailing_slash: "never",
+				hydrate: {
+					status: 200,
+					error: null,
+					nodes: [
+						import("/binance-crypto-triangular-arbitrage/_app/pages/__layout.svelte-10b692c1.js"),
+						import("/binance-crypto-triangular-arbitrage/_app/pages/index.svelte-43b4d0c6.js")
+					],
+					page: {
+						host: location.host, // TODO this is redundant
+						path: "\u002F",
+						query: new URLSearchParams(""),
+						params: {}
+					}
+				}
+			});
+		</script>
+		<script>
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments);}
+			gtag('js', new Date());
 
-</head>
+			gtag('config', 'UA-50441906-3');
+		</script>
+	</head>
+	<body>
+		<div id="svelte">
 
-<body>
-</body>
+
+<main class="svelte-1cncfbg"><h1 class="svelte-1cncfbg">Binance triangular arbitrage in real time</h1>
+	<h1 class="svelte-1cncfbg"><small>find market imperfections easily!<small><a class="github-button" href="https://github.com/eugenioclrc/binance-crypto-triangular-arbitrage" data-icon="octicon-star" aria-label="Star eugenioclrc/binance-crypto-triangular-arbitrage on GitHub">Star</a></small></small></h1>
+
+	<p>Triangular arbitrage is the act of exploiting an arbitrage opportunity resulting from a pricing discrepancy among three different currencies. A triangular arbitrage strategy involves three trades, exchanging the initial currency for a second, the second currency for a third, and the third currency for the initial. During the second trade, the arbitrageur locks in a zero-risk profit from the discrepancy that exists when the market cross exchange rate is not aligned with the implicit cross exchange rate. A profitable trade is only possible if there exist market imperfections. Profitable triangular arbitrage is very rarely possible because when such opportunities arise, traders execute trades that take advantage of the imperfections and prices adjust up or down until the opportunity disappears.[6]
+
+	</p><p><b>Want to help me?</b> please register your binance account using my referral link visit
+	<a href="https://www.binance.com/en/register?ref=Q952PPIF">https://www.binance.com/en/register</a></p>
+
+
+	Total combinations: 0 pairs<br>
+	Socket updates per second: 0<br>
+	Cycles checked per second: 0<br>
+
+	<big>Current status<br>
+		<b></b><br></big>
+
+
+	<a class="github-button" href="https://github.com/eugenioclrc/binance-crypto-triangular-arbitrage" data-icon="octicon-star" aria-label="Star eugenioclrc/binance-crypto-triangular-arbitrage on GitHub">Star</a>
+	<h2>WINNERS</h2>
+	<b>No winner pair yet</b>
+
+
+	
+	<blockquote>Trades profit are calculate on a base budget of 100USD and a 0.0075% fee
+	</blockquote>
+
+	</main>
+
+
+</div>
+	</body>
 </html>
