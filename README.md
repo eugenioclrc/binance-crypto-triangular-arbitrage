@@ -22,12 +22,10 @@
 [![Stargazers][stars-shield]][stars-url]
 [![Issues][issues-shield]][issues-url]
 
+
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://eugenioclrc.github.io/binance-crypto-triangular-arbitrage/">
-    <img src="demo.png" alt="Logo" width="500">
-  </a>
   <h3 align="center">Crypto triangular arbitrage</h3>
 
   <p align="center">
@@ -44,6 +42,9 @@
     <a href="https://github.com/othneildrew/Best-README-Template/issues">Request Feature</a>
     -->
   </p>
+  <a href="https://eugenioclrc.github.io/binance-crypto-triangular-arbitrage/">
+    <img src="demo.png" alt="Logo" width="500">
+  </a>
 </div>
 
 
