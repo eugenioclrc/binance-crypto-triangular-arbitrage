@@ -207,7 +207,7 @@ onMount( async () => {
 	</table>
 	{/if}
 	<blockquote>
-		Trades profit are calculate on a base budget of 100USD and a 0.0075% fee
+		Trades profit are calculate on a base budget of 100USD and a 0.0750% fee
 	</blockquote>
 
 	{#if oldWinners && oldWinners.length}

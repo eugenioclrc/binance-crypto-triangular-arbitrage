@@ -1,8 +1,9 @@
 import Decimal from 'decimal.js';
+import EXCHANGE_CONFIG from '../config';
 
 import { getMarketsData, getTickersData } from './exchange';
 
-export default async function createProfitFunc(BASE_USD_BUDGET = 100, FEE = '0.00075') {
+export default async function createProfitFunc(BASE_USD_BUDGET = EXCHANGE_CONFIG.BINANCE.BUDGET, FEE = EXCHANGE_CONFIG.BINANCE.FEE) {
   const tickers = await getTickersData();
   const marketsData = await getMarketsData();
 
