@@ -2,11 +2,13 @@ import Decimal from 'decimal.js';
 
 import { getMarketsData, getTickersData } from './exchange';
 
-export default async function createProfitFunc(BASE_USD_BUDGET = 100, FEE = '0.00075') {
+export default async function createProfitFunc(BASE_USD_BUDGET = "100", FEE = "0") {
   const tickers = await getTickersData();
   const marketsData = await getMarketsData();
 
   function baseBudget(coin, markets) {
+    const BASE_USD_BUDGET = checkProfit.BASE_USD_BUDGET;
+
     const stables = 'USDT,USDC,BUSD,DAI,PAX'.split(',');
 
     let symbol = '';
@@ -52,7 +54,7 @@ export default async function createProfitFunc(BASE_USD_BUDGET = 100, FEE = '0.0
     throw new Error(`no budget price for ${coin}`);
   }
 
-  return function checkProfit(pairsToTest, markets) {
+  function checkProfit(pairsToTest, markets) {
     const ret = [];
     const winners = [];
 
@@ -119,7 +121,7 @@ export default async function createProfitFunc(BASE_USD_BUDGET = 100, FEE = '0.0
 
       }
       if (!fail) {
-        const fee = Decimal(FEE).mul(3);
+        const fee = Decimal(checkProfit.FEE).mul(3);
         const profit = budget.div(initialBudget).sub(fee);
         ret.push({
           chain, profit, orders,
@@ -128,5 +130,10 @@ export default async function createProfitFunc(BASE_USD_BUDGET = 100, FEE = '0.0
     }
 
     return ret;
-  };
+  }
+
+  checkProfit.BASE_USD_BUDGET = "100";
+  checkProfit.FEE = 0;
+
+  return checkProfit;
 }
