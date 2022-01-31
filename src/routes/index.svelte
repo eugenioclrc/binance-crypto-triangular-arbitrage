@@ -14,6 +14,7 @@ import DetailModal from "$lib/detail.svelte";
 
 let modalDetail = false;
 let contentModal = {};
+let FEE = 750;
 
 const showPopupLong = e => {
 
@@ -34,6 +35,7 @@ let winners = [];
 let tops = [];
 
 let checkProfit;
+let tick;
 
 // const INTERVAL = 5000;
 const INTERVAL = 50;
@@ -57,7 +59,7 @@ onMount( async () => {
 
   checkProfit = await buildProfitFunc();
 
-  function tick() {
+  tick = function tick() {
 
     if ( info.currentStatus === "Connecting to binance" ) {
 
@@ -152,7 +154,12 @@ onMount( async () => {
   setTimeout( tick, 1000 );
   return () => {}
 
-} );
+});
+
+$: if(checkProfit && tick) {
+  checkProfit.FEE = (FEE/1000000).toFixed(6);
+}
+
 </script>
 
 <main>
@@ -177,6 +184,20 @@ onMount( async () => {
 
 
 	<a class="github-button" href="https://github.com/eugenioclrc/binance-crypto-triangular-arbitrage" data-icon="octicon-star" aria-label="Star eugenioclrc/binance-crypto-triangular-arbitrage on GitHub">Star</a>
+  {#if checkProfit}
+  
+    <blockquote class="shadow mx-auto w-2/3 bg-white p-4 my-2">
+      Trades profit are calculate on a base budget of {checkProfit.BASE_USD_BUDGET}USD and a {checkProfit.FEE * 100}% fee
+    </blockquote>
+    <div>
+      {FEE/10000}% <br />
+      <input type="range" bind:value={FEE} min="0" max="10000" step="1">
+      
+
+      <!-- Value: {(FEE/1000000).toFixed(4)} -->
+    </div>
+
+  {/if}
 	<h2>WINNERS</h2>
 	{#if ! winners.length}
 		<b>No winner pair yet</b>
@@ -206,10 +227,7 @@ onMount( async () => {
 		</tbody>
 	</table>
 	{/if}
-	<blockquote>
-		Trades profit are calculate on a base budget of 100USD and a 0.0075% fee
-	</blockquote>
-
+  
 	{#if oldWinners && oldWinners.length}
 		<h2>PREV CYCLE WINNERS</h2>
 		<ResultsTable results={oldWinners} />
